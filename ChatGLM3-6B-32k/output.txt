@@ -1,0 +1,71 @@
+首先，我们需要找到与给定的图纸信息相对应的JSON对象。根据给定的信息，我们可以看到以下对应关系：
+
+- "焊球-基板接触热阻：1×10-7m2.K/W" 对应 "BGA" 和 "substrate_frame"
+- "基板-芯片接触热阻：2.5×10-5m2.K/W" 对应 "BGA" 和 "substrate_frame"
+- "围框-底部基板接触热阻：7×10-7m2.K/W" 对应 "Frame" 和 "bottom_base"
+- "底部基板-第一层有机基板之间接触热阻：2.88×10-6m2.K/W" 对应 "Frame" 和 "bottom_base"
+- "围框-盖板边缘接触热阻1×10-7m2.K/W" 对应 "Frame" 和 "lid"
+- "第一层有机基板数据" 对应 "Frame" 和 "first_layer_organic"
+- "第二层有机基板数据" 对应 "Frame" 和 "second_layer_organic"
+- "第一层BGA球" 对应 "BGA" 和 "first_layer_BGA"
+- "TOP" 对应 "ImportAll"
+
+根据这些对应关系，我们可以更新JSON文件如下：
+
+```json
+{
+    "ImportAll": {
+      "Substrate": {
+        "filePath1": null, // 1号基板brd图纸的文件位置
+        "fileName1": null, // 1号基板brd图纸的文件名
+        "filePath2": null, // 2号基板brd图纸的文件位置
+        "fileName2": null  // 2号基板brd图纸的文件名
+      },
+      "Chip": {
+        "filePath": null, // 芯片dwg图纸的文件位置
+        "fileName": null  // 芯片dwg图纸的文件名
+      },
+      "Frame": {
+        "filePath": null, // 围框dwg图纸的文件位置
+        "fileName": null  // 围框dwg图纸的文件名
+      },
+      "Lid": {
+        "filePath": null, // 盖板dwg图纸的文件位置
+        "fileName": null  // 盖板dwg图纸的文件名
+      },
+      "BGA": {
+        "filePath": null, // BGA焊球dwg图纸的文件位置
+        "fileName": null  // BGA焊球dwg图纸的文件名
+      }
+    },
+    "CreateSubstrate": {
+      "fileNameTOP": "基板1.dwg", // 顶层基板的文件名，对应ImportAll的fileName
+      "substrateNameTOP": "Substrate1",  // 顶层基板的是1号还是2号，如果是1号则是Substrate1，如果是2号则是Substrate2"
+      "fileNameBOTTOM": "基板2.dwg", // 底层基板的文件名，对应ImportAll的fileName"
+      "substrateNameBOTTOM": "Substrate2"  // 底层基板的是1号还是2号，如果是1号则是Substrate1，如果是2号则是Substrate2"
+    },
+    "CreateBGA": {
+      "BGAHEIGHT": "0.34", // BGA焊球的高度
+    },
+    "AssignBoundary": {
+      "top_temperature": "20", // 芯片封装顶部的温度
+      "bottom_temperature": "20" // 芯片封装底部的温度
+    },
+    "AssignMaterial": {
+      "Frame": "FRAME_MATERIAL", // 围框材料
+      "Lid": "LID_MATERIAL", // 盖板材料
+      "BGA": "BGA_MATERIAL"  // BGA焊球材料
+    },
+    "ThermalResistance": {
+      "bga_substrate": "1×10-7m2.K/W", // BGA焊球和基板之间的接触热阻，单位是m2.K/W
+      "substrate_frame": "2.5×10-5m2.K/W", //围框和基板之间的接触热，单位是m2.K/W
+      "frame_lid": "7×10-7m2.K/W"  // 围框和盖板之间的接触热阻，单位是m2.K/W
+    },
+    "AssignNet": {
+      "max_iterate": "100", // CFD仿真的最大迭代次数
+      "accuracy": "1"  // CFD仿真的精确度，数值为1、2、3、4、5，这五个值
+    }
+}
+```
+
+这样，我们就更新了JSON文件以匹配给定的图纸信息。

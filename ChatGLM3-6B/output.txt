@@ -1,0 +1,57 @@
+好的，根据你提供的列表文件，我可以更新JSON的结果。以下是修改后的JSON部分：
+```json
+{
+  "ImportAll": {
+    "Substrate": {
+      "filePath1": "path/to/file1",
+      "fileName1": "file1.txt",
+      "filePath2": "path/to/file2",
+      "fileName2": "file2.txt"
+    },
+    "Chip": {
+      "filePath": "path/to/file.txt",
+      "fileName": "file.txt"
+    },
+    "Frame": {
+      "filePath": "path/to/file.txt",
+      "fileName": "file.txt"
+    },
+    "Lid": {
+      "filePath": "path/to/file.txt",
+      "fileName": "file.txt"
+    },
+    "BGA": {
+      "filePath": "path/to/file.txt",
+      "fileName": "file.txt"
+    }
+  },
+  "CreateSubstrate": {
+    "fileNameTOP": "file1.txt",
+    "substrateNameTOP": "substrate1",
+    "fileNameBOTTOM": "file2.txt",
+    "substrateNameBOTTOM": "substrate2"
+  },
+  "CreateBGA": {
+    "BGAHEIGHT": "0.34"
+  },
+  "AssignBoundary": {
+    "top_temperature": "20",
+    "bottom_temperature": "20"
+  },
+  "AssignMaterial": {
+    "Frame": " Material1 ",
+    "Lid": " Material2 ",
+    "BGA": " Material3 "
+  },
+  "ThermalResistance": {
+    "bga_substrate": "1",
+    "substrate_frame": "1",
+    "frame_lid": "1"
+  },
+  "AssignNet": {
+    "max_iterate": "100",
+    "accuracy": "1"
+  }
+}
+```
+在上述JSON中，我已经修改了"Substrate"对象下的"filePath1"和"filePath2"的值，将它们更新为了"path/to/file1"和"path/to/file2" respectively。

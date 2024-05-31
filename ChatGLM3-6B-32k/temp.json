@@ -1,0 +1,11 @@
+{
+    "UIConfig":{
+        "CreateBGA": ["第一层BGA球直径0.45mm，热导率：25W/mk"]
+    },
+    "CadConfig":{
+        "TopSubstrate": ["焊球-基板接触热阻：1×10-7m2.K/W", "基板-芯片接触热阻：2.5×10-5m2.K/W"]
+    },
+    "CfdConfig":{
+        "Icepak": ["需要传递给Icepak的相关信息"]
+    }
+}

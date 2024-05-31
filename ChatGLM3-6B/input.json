@@ -1,0 +1,53 @@
+{
+  "ImportAll": {
+    "Substrate": {
+      "filePath1": null,
+      "fileName1": null,
+      "filePath2": null,
+      "fileName2": null
+    },
+    "Chip": {
+      "filePath": null,
+      "fileName": null
+    },
+    "Frame": {
+      "filePath": null,
+      "fileName": null
+    },
+    "Lid": {
+      "filePath": null,
+      "fileName": null
+    },
+    "BGA": {
+      "filePath": null,
+      "fileName": null
+    }
+  },
+  "CreateSubstrate": {
+    "fileNameTOP": null,
+    "substrateNameTOP": null,
+    "fileNameBOTTOM": null,
+    "substrateNameBOTTOM": null
+  },
+  "CreateBGA": {
+    "BGAHEIGHT": "0.34"
+  },
+  "AssignBoundary": {
+    "top_temperature": "20",
+    "bottom_temperature": "20"
+  },
+  "AssignMaterial": {
+    "Frame": null,
+    "Lid": null,
+    "BGA": null
+  },
+  "ThermalResistance": {
+    "bga_substrate": "0",
+    "substrate_frame": "0",
+    "frame_lid": "0"
+  },
+  "AssignNet": {
+    "max_iterate": "100",
+    "accuracy": "1"
+  }
+}
